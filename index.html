@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHAO-HUNG, WU | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #0f172a; color: #e2e8f0; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .card { background: #1e293b; border: 1px solid #334155; transition: 0.3s; }
+        .card:hover { border-color: #38bdf8; transform: translateY(-5px); }
+        .gradient-text { background: linear-gradient(90deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        [data-lang="zh"] { display: none; } /* 預設隱藏中文 */
+    </style>
+</head>
+<body class="p-6 md:p-12">
+    <div class="max-w-4xl mx-auto">
+        <div class="flex justify-end mb-8">
+            <button onclick="toggleLanguage()" class="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 px-4 py-2 rounded-full border border-slate-600 transition">
+                <i class="fas fa-language text-sky-400 text-xl"></i>
+                <span id="lang-btn-text" class="font-medium text-sm">Translate to 中文</span>
+            </button>
+        </div>
+
+        <header class="mb-16 text-center md:text-left">
+            <h1 class="text-5xl font-extrabold mb-4 gradient-text">SHAO-HUNG WU</h1>
+            <p class="text-xl text-slate-400 mb-6">
+                <span data-lang="en">Master of Engineering in Computer Science, NTHU</span>
+                <span data-lang="zh">國立清華大學 資工碩士</span>
+            </p>
+            <div class="flex flex-wrap justify-center md:justify-start gap-4 text-sm">
+                <a href="mailto:nemowu1999@gmail.com" class="hover:text-sky-400"><i class="fas fa-envelope mr-2"></i>Email</a>
+                <a href="https://linkedin.com/in/acewu1014" target="_blank" class="hover:text-sky-400"><i class="fab fa-linkedin mr-2"></i>LinkedIn</a>
+                <a href="https://github.com/acewu1014" target="_blank" class="hover:text-sky-400"><i class="fab fa-github mr-2"></i>GitHub</a>
+                <span class="text-slate-500"><i class="fas fa-phone mr-2"></i>+886 905-300-111</span>
+            </div>
+        </header>
+
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 border-b border-slate-700 pb-2 italic text-sky-400">
+                <span data-lang="en">Education</span><span data-lang="zh">學歷背景</span>
+            </h2>
+            <div class="space-y-4">
+                <div>
+                    <h3 class="font-bold text-lg">National Tsing Hua University (NTHU)</h3>
+                    <p class="text-slate-400 text-sm">
+                        <span data-lang="en">Master of Engineering (Computer Science) | 2022-2024</span>
+                        <span data-lang="zh">工學碩士 (資訊工程) | 2022-2024</span>
+                    </p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg">National Chengchi University (NCCU)</h3>
+                    <p class="text-slate-400 text-sm">
+                        <span data-lang="en">Bachelor of Business Administration (MIS) | 2018-2022</span>
+                        <span data-lang="zh">商學學士 (資訊管理) | 2018-2022</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 border-b border-slate-700 pb-2 italic text-sky-400">
+                <span data-lang="en">Research Experience @ KKSTREAM</span><span data-lang="zh">研究經驗 @ KKSTREAM</span>
+            </h2>
+            <div class="space-y-8">
+                <div class="card p-6 rounded-xl">
+                    <h3 class="text-xl font-bold text-white mb-2">Multi-Label Video Tagging Using Prompt Learning</h3>
+                    <p class="text-xs text-sky-400 font-mono mb-4 italic text-sky-400">Python / Pytorch / PyQt / Tensorflow / AWS / git</p>
+                    <ul class="list-disc list-inside text-slate-300 space-y-2 text-sm">
+                        <li>
+                            <span data-lang="en">Introduce a novel mechanism (video tokens as auxiliary text), boosting performance notably.</span>
+                            <span data-lang="zh">引入創新機制（將影片標記作為輔助文本），顯著提升模型性能。</span>
+                        </li>
+                        <li>
+                            <span data-lang="en">Propose a UI that significantly streamlines multi-label video annotation.</span>
+                            <span data-lang="zh">開發專屬使用者介面，大幅簡化多標籤影片標記流程。</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card p-6 rounded-xl">
+                    <h3 class="text-xl font-bold text-white mb-2 italic">MMAsia'24: Description-Driven Audiovisual Embedding</h3>
+                    <p class="text-xs text-sky-400 font-mono mb-4">Python / Pytorch / AWS / git</p>
+                    <ul class="list-disc list-inside text-slate-300 space-y-2 text-sm">
+                        <li>
+                            <span data-lang="en">Achieve strong results on nine LVU tasks, notably improving 3 tasks over prior SOTA.</span>
+                            <span data-lang="zh">在 9 項 LVU 任務中表現強勁，其中 3 項任務優於現有最佳技術 (SOTA)。</span>
+                        </li>
+                        <li>
+                            <span data-lang="en">Model temporal correlations between audio/visual features, enhanced by movie descriptions.</span>
+                            <span data-lang="zh">對音訊與視覺特徵的時間相關性進行建模，並利用電影描述強化表徵學習。</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 border-b border-slate-700 pb-2 italic text-sky-400">
+                <span data-lang="en">Technical Skills</span><span data-lang="zh">技術技能</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card p-4 rounded-lg">
+                    <h3 class="font-bold mb-2"><i class="fas fa-microchip mr-2 text-sky-400"></i><span data-lang="en">System & OS (C++)</span><span data-lang="zh">系統與作業系統 (C++)</span></h3>
+                    <p class="text-sm text-slate-400">
+                        <span data-lang="en">Implemented key modules in NachOS: system calls, CPU scheduling, and file systems.</span>
+                        <span data-lang="zh">於 NachOS 實作核心模組：系統呼叫 (Syscalls)、CPU 排程與檔案系統。</span>
+                    </p>
+                </div>
+                <div class="card p-4 rounded-lg">
+                    <h3 class="font-bold mb-2"><i class="fas fa-cube mr-2 text-sky-400"></i><span data-lang="en">Computer Graphics & Architecture</span><span data-lang="zh">電腦圖學與架構</span></h3>
+                    <p class="text-sm text-slate-400">
+                        <span data-lang="en">Developed rendering pipeline (OpenCL) and optimized cache indexing (Tony Givargis's technique).</span>
+                        <span data-lang="zh">開發渲染管線 (OpenCL) 並優化快取索引機制。</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 border-b border-slate-700 pb-2 italic text-sky-400">
+                <span data-lang="en">Awards</span><span data-lang="zh">獲獎紀錄</span>
+            </h2>
+            <ul class="space-y-3 text-sm text-slate-300">
+                <li class="flex items-start">
+                    <i class="fas fa-trophy text-yellow-500 mr-3 mt-1"></i>
+                    <span>
+                        <span data-lang="en">First Place, International ICT Innovative Services Awards (2021)</span>
+                        <span data-lang="zh">2021 第 26 屆全國大專校院資訊應用服務創新競賽 - 第一名</span>
+                    </span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-award text-sky-400 mr-3 mt-1"></i>
+                    <span>
+                        <span data-lang="en">College Student Research, Ministry of Science and Technology (2021)</span>
+                        <span data-lang="zh">2021 國科會大專學生研究計畫 (MOST)</span>
+                    </span>
+                </li>
+            </ul>
+        </section>
+
+        <footer class="text-center text-slate-500 text-xs mt-20 border-t border-slate-800 pt-8">
+            © 2026 SHAO-HUNG WU. Built with Tailwind CSS.
+        </footer>
+    </div>
+
+    <script>
+        let currentLang = 'en';
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'zh' : 'en';
+            
+            // 更新按鈕文字
+            document.getElementById('lang-btn-text').innerText = currentLang === 'en' ? 'Translate to 中文' : '切換至 English';
+            
+            // 切換顯示元素
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.style.display = el.getAttribute('data-lang') === currentLang ? 'inline' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>
