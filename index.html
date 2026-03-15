@@ -46,7 +46,12 @@
         }
         .ls-btn.active { background: white; color: var(--accent-secondary); box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
 
-        .container { width: 85%; max-width: 1000px; margin: 100px auto; padding: 100px 0; }
+        .container { 
+            width: 85%;            
+            max-width: 960px;     
+            margin: 0 auto; 
+            padding: 120px 0 60px; 
+        }
 
         /* Bento Grid 樣式 */
         .bento-grid {
@@ -81,7 +86,25 @@
             object-fit: cover; margin-bottom: 24px; transform: rotate(-3deg);
             border: 5px solid white; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
-
+        /* Bullet List 樣式 */
+        .bullet-list {
+            margin-top: 15px;
+            list-style: none;
+        }
+        .bullet-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        .bullet-list li::before {
+            content: "•";
+            color: var(--accent-res);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
         @media (max-width: 768px) {
             .bento-grid { grid-template-columns: 1fr; }
             .full-width { grid-column: span 1; }
@@ -147,10 +170,16 @@
         <div class="bento-grid">
             <div class="bento-card full-width">
                 <h3 class="text-xl font-bold mb-2">Multi-Label Video Tagging Using Prompt Learning 📝</h3>
-                <p class="text-slate-600 mb-4">
-                    <span class="lang-zh">開發了一個專屬的 PyQt 介面，讓原本痛苦的多標籤影片標記流程變得超級順暢。</span>
-                    <span class="lang-en">Introduce a novel mechanism using video tokens as auxiliary text to boost performance.</span>
-                </p>
+                <ul class="bullet-list">
+                        <li>
+                            <span class="lang-zh">利用影片特徵值作為文字輸入的額外資訊讓模型有顯著的效能提升</span>
+                            <span class="lang-en">Proposed incorporating video features as auxiliary text tokens to guide prompt optimization, significantly improving model performance.</span>
+                        </li>
+                        <li>
+                            <span class="lang-zh">設計影片標註工具讓標註速度提升超過50%</span>
+                            <span class="lang-en">Increasing annotation efficiency by 50% via designing a new video annotation system </span>
+                        </li>
+                    </ul>
                 <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-md text-xs font-bold">Python</span>
                 <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-md text-xs font-bold">PyTorch</span>
                 <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-md text-xs font-bold">Tensorflow</span>
