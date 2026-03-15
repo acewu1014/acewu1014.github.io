@@ -11,7 +11,8 @@
         .card { background: #1e293b; border: 1px solid #334155; transition: 0.3s; }
         .card:hover { border-color: #38bdf8; transform: translateY(-5px); }
         .gradient-text { background: linear-gradient(90deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        [data-lang="zh"] { display: none; } /* 預設隱藏中文 */
+        [data-lang="zh"] { display: none; }
+        .profile-img { width: 150px; height: 150px; object-fit: cover; border: 4px solid #334155; }
     </style>
 </head>
 <body class="p-6 md:p-12">
@@ -23,19 +24,81 @@
             </button>
         </div>
 
-        <header class="mb-16 text-center md:text-left">
-            <h1 class="text-5xl font-extrabold mb-4 gradient-text">SHAO-HUNG, WU</h1>
-            <h1 class="text-5xl font-extrabold mb-4 gradient-text">吳紹宏</h1>
-            <p class="text-xl text-slate-400 mb-6">
-                <span data-lang="en">Master of Engineering in Computer Science, NTHU</span>
-                <span data-lang="zh">國立清華大學 資工碩士</span>
-            </p>
-            <div class="flex flex-wrap justify-center md:justify-start gap-4 text-sm">
-                <a href="mailto:nemowu1999@gmail.com" class="hover:text-sky-400"><i class="fas fa-envelope mr-2"></i>Email</a>
-                <a href="https://linkedin.com/in/acewu1014" target="_blank" class="hover:text-sky-400"><i class="fab fa-linkedin mr-2"></i>LinkedIn</a>
-                <a href="https://github.com/acewu1014" target="_blank" class="hover:text-sky-400"><i class="fab fa-github mr-2"></i>GitHub</a>
+        <header class="mb-16 flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
+            <img src="profile.jpg" alt="SHAO-HUNG, WU" class="profile-img rounded-full shadow-2xl">
+            <div>
+                <h1 class="text-5xl font-extrabold mb-2 gradient-text">SHAO-HUNG, WU</h1>
+                <h1 class="text-4xl font-extrabold mb-4 gradient-text">吳紹宏</h1>
+                <p class="text-xl text-slate-400 mb-6 italic">
+                    <span data-lang="en">Master of Engineering in Computer Science, NTHU</span>
+                    <span data-lang="zh">國立清華大學 資工碩士</span>
+                </p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4 text-sm">
+                    <a href="mailto:nemowu1999@gmail.com" class="hover:text-sky-400"><i class="fas fa-envelope mr-2"></i>Email</a>
+                    <a href="https://linkedin.com/in/acewu1014" target="_blank" class="hover:text-sky-400"><i class="fab fa-linkedin mr-2"></i>LinkedIn</a>
+                    <a href="https://github.com/acewu1014" target="_blank" class="hover:text-sky-400"><i class="fab fa-github mr-2"></i>GitHub</a>
+                </div>
             </div>
         </header>
+
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 border-b border-slate-700 pb-2 italic text-sky-400">
+                <span data-lang="en">LLM Research & Insights</span><span data-lang="zh">LLM 研究與技術洞察</span>
+            </h2>
+            <div class="card p-6 rounded-xl border-t-4 border-t-sky-400">
+                <p class="text-slate-300 mb-4 text-sm leading-relaxed">
+                    <span data-lang="en">Actively researching advanced LLM architectures. I maintain a comprehensive technical knowledge base covering:</span>
+                    <span data-lang="zh">深入研究 LLM 進階架構，並維護完整的技術筆記庫，涵蓋以下核心領域：</span>
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-3 py-1 bg-slate-700 rounded-full text-xs text-sky-300">Transformers</span>
+                    <span class="px-3 py-1 bg-slate-700 rounded-full text-xs text-sky-300">KV-Caching</span>
+                    <span class="px-3 py-1 bg-slate-700 rounded-full text-xs text-sky-300">State Space Models (Mamba)</span>
+                    <span class="px-3 py-1 bg-slate-700 rounded-full text-xs text-sky-300">Test-Time Training (TTT)</span>
+                </div>
+                <a href="https://www.notion.so/LLM-30f8ce780b7880e2b8fdc1228b39f90a?source=copy_link" target="_blank" class="inline-flex items-center text-sm font-bold text-sky-400 hover:underline">
+                    <i class="fas fa-external-link-alt mr-2"></i>
+                    <span data-lang="en">View Research Notes on Notion</span>
+                    <span data-lang="zh">前往 Notion 查看研究筆記</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 border-b border-slate-700 pb-2 italic text-sky-400">
+                <span data-lang="en">Research Experience @ KKSTREAM</span><span data-lang="zh">研究經驗 @ KKSTREAM</span>
+            </h2>
+            <div class="space-y-8">
+                <div class="card p-6 rounded-xl">
+                    <h3 class="text-xl font-bold text-white mb-2 italic">MMAsia'24: Description-Driven Audiovisual Embedding</h3>
+                    <p class="text-xs text-sky-400 font-mono mb-4">Python / Pytorch / AWS / git</p>
+                    <ul class="list-disc list-inside text-slate-300 space-y-2 text-sm">
+                        <li>
+                            <span data-lang="en">Improved 3 tasks over prior SOTA on nine LVU tasks.</span>
+                            <span data-lang="zh">在 9 項 LVU 任務中，其中 3 項任務優於現有最佳技術 (SOTA)。</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 border-b border-slate-700 pb-2 italic text-sky-400">
+                <span data-lang="en">Side Projects</span><span data-lang="zh">個人專案</span>
+            </h2>
+            <div class="grid grid-cols-1 gap-6">
+                <div class="card p-6 rounded-xl border-l-4 border-l-sky-500">
+                    <h3 class="text-xl font-bold text-white mb-2">Web Automation & Market Monitoring</h3>
+                    <p class="text-xs text-sky-400 font-mono mb-4 text-sky-400">Python / Playwright / Discord API</p>
+                    <ul class="list-disc list-inside text-slate-300 space-y-2 text-sm">
+                        <li>
+                            <span data-lang="en">Automated monitoring for Japanese e-commerce with 5-min polling.</span>
+                            <span data-lang="zh">自動化監測日本電商平台，實現每 5 分鐘一次的高頻率追蹤。</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
         <section class="mb-12">
             <h2 class="text-2xl font-bold mb-6 border-b border-slate-700 pb-2 italic text-sky-400">
@@ -59,127 +122,6 @@
             </div>
         </section>
 
-        <section class="mb-12">
-            <h2 class="text-2xl font-bold mb-6 border-b border-slate-700 pb-2 italic text-sky-400">
-                <span data-lang="en">Research Experience @ KKSTREAM</span><span data-lang="zh">研究經驗 @ KKSTREAM</span>
-            </h2>
-            <div class="space-y-8">
-                <div class="card p-6 rounded-xl">
-                    <h3 class="text-xl font-bold text-white mb-2">Multi-Label Video Tagging Using Prompt Learning</h3>
-                    <p class="text-xs text-sky-400 font-mono mb-4 italic text-sky-400">Python / Pytorch / PyQt / Tensorflow / AWS / git</p>
-                    <ul class="list-disc list-inside text-slate-300 space-y-2 text-sm">
-                        <li>
-                            <span data-lang="en">Introduce a novel mechanism (video tokens as auxiliary text), boosting performance notably.</span>
-                            <span data-lang="zh">引入創新機制（將影片標記作為輔助文本），顯著提升模型性能。</span>
-                        </li>
-                        <li>
-                            <span data-lang="en">Propose a UI that significantly streamlines multi-label video annotation.</span>
-                            <span data-lang="zh">開發專屬使用者介面，大幅簡化多標籤影片標記流程。</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="card p-6 rounded-xl" href="https://dl.acm.org/doi/10.1145/3696409.3700290">
-                    <h3 class="text-xl font-bold text-white mb-2">Description-Driven Audiovisual Embedding  Space for Enhanced Movie Understanding(MMAsia'24)</h3>
-                    <p class="text-xs text-sky-400 font-mono mb-4">Python / Pytorch / AWS / git</p>
-                    <ul class="list-disc list-inside text-slate-300 space-y-2 text-sm">
-                        <li>
-                            <span data-lang="en">Achieve strong results on nine LVU tasks, notably improving 3 tasks over prior SOTA.</span>
-                            <span data-lang="zh">在 9 項 LVU 任務中表現強勁，其中 3 項任務優於現有最佳。</span>
-                        </li>
-                        <li>
-                            <span data-lang="en">Model temporal correlations between audio/visual features, enhanced by movie descriptions.</span>
-                            <span data-lang="zh">對音訊與視覺特徵的時間相關性進行建模，並利用電影描述強化特徵學習。</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="mb-12">
-            <h2 class="text-2xl font-bold mb-6 border-b border-slate-700 pb-2 italic text-sky-400">
-                <span data-lang="en">Side Projects</span><span data-lang="zh">個人專案</span>
-            </h2>
-            <div class="grid grid-cols-1 gap-6">
-                <div class="card p-6 rounded-xl border-l-4 border-l-sky-500">
-                    <h3 class="text-xl font-bold text-white mb-2">Web Automation & Market Monitoring</h3>
-                    <p class="text-xs text-sky-400 font-mono mb-4">Python / Playwright / Discord API</p>
-                    <ul class="list-disc list-inside text-slate-300 space-y-2 text-sm">
-                        <li>
-                            <span data-lang="en">Developed an automated system to track items on Japanese e-commerce platforms with 5-minute polling.</span>
-                            <span data-lang="zh">開發自動化監測系統，以每 5 分鐘一次的頻率追蹤日本電商平台上的特定商品。</span>
-                        </li>
-                        <li>
-                            <span data-lang="en">Utilized Playwright to handle dynamic content and bypass anti-scraping mechanisms.</span>
-                            <span data-lang="zh">使用 Playwright 處理動態網頁內容，並成功繞過反爬蟲機制。</span>
-                        </li>
-                        <li>
-                            <span data-lang="en">Integrated Discord Webhooks for real-time notifications, increasing acquisition speed.</span>
-                            <span data-lang="zh">整合 Discord Webhook 實現即時通知，大幅提升商品搶購速度並減少手動搜尋時間。</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="card p-6 rounded-xl border-l-4 border-l-indigo-500">
-                    <h3 class="text-xl font-bold text-white mb-2">Customized Search Engine & Data Pipeline</h3>
-                    <p class="text-xs text-sky-400 font-mono mb-4">Python / BeautifulSoup</p>
-                    <ul class="list-disc list-inside text-slate-300 space-y-2 text-sm">
-                        <li>
-                            <span data-lang="en">Developed a specialized search engine by scraping and aggregating Google Search results.</span>
-                            <span data-lang="zh">透過爬取並彙整 Google 搜尋結果，開發專用的搜尋引擎。</span>
-                        </li>
-                        <li>
-                            <span data-lang="en">Engineered a custom re-ranking algorithm to refine raw data into high-relevancy results.</span>
-                            <span data-lang="zh">設計自定義過濾與重排演算法，將原始數據轉化為結構化且高相關性的結果。</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="mb-12">
-            <h2 class="text-2xl font-bold mb-6 border-b border-slate-700 pb-2 italic text-sky-400">
-                <span data-lang="en">Technical Skills</span><span data-lang="zh">技術技能</span>
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="card p-4 rounded-lg">
-                    <h3 class="font-bold mb-2"><i class="fas fa-microchip mr-2 text-sky-400"></i><span data-lang="en">System & OS (C++)</span><span data-lang="zh">系統與作業系統 (C++)</span></h3>
-                    <p class="text-sm text-slate-400">
-                        <span data-lang="en">Implemented key modules in NachOS: system calls, CPU scheduling, and file systems.</span>
-                        <span data-lang="zh">於 NachOS 實作核心模組：系統呼叫 (Syscalls)、CPU 排程與檔案系統。</span>
-                    </p>
-                </div>
-                <div class="card p-4 rounded-lg">
-                    <h3 class="font-bold mb-2"><i class="fas fa-cube mr-2 text-sky-400"></i><span data-lang="en">Computer Graphics & Architecture</span><span data-lang="zh">電腦圖學與架構</span></h3>
-                    <p class="text-sm text-slate-400">
-                        <span data-lang="en">Developed rendering pipeline (OpenCL) and optimized cache indexing (Tony Givargis's technique).</span>
-                        <span data-lang="zh">開發渲染管線 (OpenCL) 並優化快取索引機制。</span>
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section class="mb-12">
-            <h2 class="text-2xl font-bold mb-6 border-b border-slate-700 pb-2 italic text-sky-400">
-                <span data-lang="en">Awards</span><span data-lang="zh">獲獎紀錄</span>
-            </h2>
-            <ul class="space-y-3 text-sm text-slate-300">
-                <li class="flex items-start">
-                    <i class="fas fa-trophy text-yellow-500 mr-3 mt-1"></i>
-                    <span>
-                        <span data-lang="en">First Place, International ICT Innovative Services Awards (2021)</span>
-                        <span data-lang="zh">2021 第 26 屆全國大專校院資訊應用服務創新競賽 - 第一名</span>
-                    </span>
-                </li>
-                <li class="flex items-start">
-                    <i class="fas fa-award text-sky-400 mr-3 mt-1"></i>
-                    <span>
-                        <span data-lang="en">College Student Research, Ministry of Science and Technology (2021)</span>
-                        <span data-lang="zh">2021 國科會大專學生研究計畫 (MOST)</span>
-                    </span>
-                </li>
-            </ul>
-        </section>
-
         <footer class="text-center text-slate-500 text-xs mt-20 border-t border-slate-800 pt-8">
             © 2026 SHAO-HUNG, WU. Built with Tailwind CSS.
         </footer>
@@ -189,11 +131,7 @@
         let currentLang = 'en';
         function toggleLanguage() {
             currentLang = currentLang === 'en' ? 'zh' : 'en';
-            
-            // 更新按鈕文字
             document.getElementById('lang-btn-text').innerText = currentLang === 'en' ? 'Translate to 中文' : '切換至 English';
-            
-            // 切換顯示元素
             document.querySelectorAll('[data-lang]').forEach(el => {
                 el.style.display = el.getAttribute('data-lang') === currentLang ? 'inline' : 'none';
             });
