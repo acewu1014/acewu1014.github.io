@@ -3,230 +3,223 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHAO-HUNG, WU | Software Engineer & AI Researcher</title>
+    <title>SHAO-HUNG, WU | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* --- 核心變數與重置 --- */
         :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-main: #f8fafc;
-            --text-secondary: #94a3b8;
-            --accent-blue: #38bdf8;
-            --accent-gradient: linear-gradient(135deg, #38bdf8, #818cf8);
+            /* 換成更鮮豔活潑的配色 */
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #334155;
+            --text-secondary: #64748b;
+            --accent-primary: #f59e0b; /* 活潑的橘 */
+            --accent-secondary: #3b82f6; /* 晴空藍 */
+            --accent-tertiary: #10b981; /* 活力綠 */
             --card-radius: 24px;
-            --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.3);
-            --font-stack: 'Inter', -apple-system, system-ui, sans-serif;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: var(--font-stack);
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
         }
 
-        /* --- 語言切換核心 --- */
+        /* 語言切換 */
         body[data-lang="zh"] .lang-en { display: none !important; }
         body[data-lang="en"] .lang-zh { display: none !important; }
 
-        /* --- 導覽列 --- */
+        /* 導覽列 */
         .navbar {
             position: fixed; top: 0; left: 0; right: 0; height: 70px;
-            background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(20px);
-            z-index: 1000; border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px);
+            z-index: 1000; border-bottom: 1px solid rgba(0, 0, 0, 0.05);
             display: flex; justify-content: space-between; align-items: center; padding: 0 40px;
         }
-        .nav-logo { font-weight: 800; font-size: 1.2rem; letter-spacing: 1px; }
-        .lang-switch-group {
-            display: flex; gap: 12px; background: rgba(255, 255, 255, 0.05);
-            padding: 6px 16px; border-radius: 20px; font-size: 0.85rem;
-        }
-        .ls-btn { color: var(--text-secondary); cursor: pointer; transition: 0.3s; }
-        .ls-btn.active { color: var(--accent-blue); font-weight: 700; }
 
-        /* --- Hero Section --- */
-        .hero {
-            min-height: 80vh; display: flex; flex-direction: column;
-            justify-content: center; align-items: center; text-align: center;
-            padding: 120px 20px 60px;
+        .lang-switch {
+            display: flex; background: #f1f5f9; padding: 4px; border-radius: 99px; gap: 4px;
         }
-        .profile-img {
-            width: 140px; height: 140px; object-fit: cover;
-            border-radius: 50%; border: 4px solid var(--card-bg);
-            margin-bottom: 24px; box-shadow: var(--shadow-hover);
+        .ls-btn {
+            padding: 4px 16px; border-radius: 99px; cursor: pointer; transition: 0.3s; font-size: 0.85rem; font-weight: 600;
         }
-        .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 800;
-            line-height: 1.1; margin-bottom: 15px;
-            background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        .hero p { font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin-bottom: 30px; }
+        .ls-btn.active { background: white; color: var(--accent-secondary); box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
 
-        /* --- Bento Grid --- */
-        .container { width: 92%; max-width: 1200px; margin: 0 auto; padding: 80px 0; }
-        .grid-container {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 24px;
+        .container { width: 92%; max-width: 1100px; margin: 0 auto; padding: 100px 0; }
+
+        /* Bento Grid 樣式 */
+        .bento-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 48px;
         }
         .bento-card {
             background: var(--card-bg); border-radius: var(--card-radius);
-            padding: 32px; border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: 0.4s ease; display: flex; flex-direction: column;
+            padding: 32px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(0,0,0,0.02);
         }
-        .bento-card:hover { transform: translateY(-8px); border-color: var(--accent-blue); box-shadow: var(--shadow-hover); }
-        .bento-card.large { grid-column: span 2; }
+        .bento-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+        .full-width { grid-column: span 2; }
 
-        .card-tag { font-size: 0.75rem; font-weight: 700; color: var(--accent-blue); text-transform: uppercase; margin-bottom: 12px; display: block; }
-        .card-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 12px; }
-        .card-desc { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 20px; }
-        
-        .tech-pill {
-            display: inline-block; padding: 4px 10px; background: rgba(56, 189, 248, 0.1);
-            color: var(--accent-blue); border-radius: 6px; font-size: 0.75rem; margin: 0 4px 8px 0;
+        /* 標題與裝飾 */
+        .category-header {
+            font-size: 1.8rem; font-weight: 800; margin-bottom: 24px;
+            display: flex; align-items: center; gap: 12px;
+        }
+        .icon-box {
+            width: 40px; height: 40px; border-radius: 10px;
+            display: flex; align-items: center; justify-content: center; color: white;
         }
 
-        /* --- 修正手機版 --- */
+        .tag {
+            display: inline-block; padding: 4px 12px; border-radius: 99px;
+            font-size: 0.75rem; font-weight: 700; margin-bottom: 12px;
+        }
+
+        .profile-img {
+            width: 140px; height: 140px; border-radius: 30px; /* 稍微方圓，更有設計感 */
+            object-fit: cover; margin-bottom: 24px; transform: rotate(-3deg);
+            border: 5px solid white; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
         @media (max-width: 768px) {
-            .bento-card.large { grid-column: span 1; }
+            .bento-grid { grid-template-columns: 1fr; }
+            .full-width { grid-column: span 1; }
             .navbar { padding: 0 20px; }
-            .hero h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
-<body data-lang="en">
+<body data-lang="zh">
     <nav class="navbar">
-        <div class="nav-logo">SHAO-HUNG, WU</div>
-        <div class="lang-switch-group">
-            <span onclick="setLang('zh')" class="ls-btn" id="btn-zh">中文</span>
-            <span style="color:rgba(255,255,255,0.2)">/</span>
-            <span onclick="setLang('en')" class="ls-btn active" id="btn-en">EN</span>
+        <div class="font-black text-xl tracking-tight text-slate-800">SHAO-HUNG 👋</div>
+        <div class="lang-switch">
+            <div onclick="setLang('zh')" class="ls-btn active" id="btn-zh">中</div>
+            <div onclick="setLang('en')" class="ls-btn" id="btn-en">EN</div>
         </div>
     </nav>
 
-    <section class="hero">
-        <img src="profile.jpg" alt="SHAO-HUNG, WU" class="profile-img">
-        <h1>
-            <span class="lang-en">Code with Purpose,<br>Research with Vision</span>
-            <span class="lang-zh">精於開發，<br>深於研究</span>
-        </h1>
-        <p>
-            <span class="lang-en">Master of Engineering in CS @ NTHU. Focused on AI, LLM Architectures, and Web Automation.</span>
-            <span class="lang-zh">國立清華大學資工碩士。專注於 AI 研究、LLM 架構以及自動化系統開發。</span>
-        </p>
-        <div class="flex gap-4">
-            <a href="mailto:nemowu1999@gmail.com" class="text-2xl hover:text-sky-400 transition"><i class="fas fa-envelope"></i></a>
-            <a href="https://linkedin.com/in/acewu1014" target="_blank" class="text-2xl hover:text-sky-400 transition"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/acewu1014" target="_blank" class="text-2xl hover:text-sky-400 transition"><i class="fab fa-github"></i></a>
-        </div>
-    </section>
-
     <div class="container">
-        <div class="grid-container">
-            
-            <div class="bento-card large">
-                <span class="card-tag">Technical Insights</span>
-                <h3 class="card-title">
-                    <span class="lang-en">LLM Research & Knowledge Base</span>
-                    <span class="lang-zh">LLM 研究與技術洞察</span>
-                </h3>
-                <p class="card-desc">
-                    <span class="lang-en">Deep diving into advanced architectures. I maintain a technical knowledge base covering Transformers, KV-Caching, and State Space Models (Mamba).</span>
-                    <span class="lang-zh">深入探究進階模型架構。我維護了一份詳盡的技術筆記，涵蓋 Transformer 原理、KV-Caching 優化以及 Mamba (SSM) 等前沿技術。</span>
-                </p>
-                <div class="mb-6">
-                    <span class="tech-pill">Transformers</span>
-                    <span class="tech-pill">KV-Caching</span>
-                    <span class="tech-pill">SSM (Mamba)</span>
-                    <span class="tech-pill">TTT</span>
+        <header class="flex flex-col items-center text-center mb-20">
+            <img src="profile.jpg" alt="吳紹宏" class="profile-img">
+            <h1 class="text-5xl font-black mb-4 text-slate-800">
+                Hey, I'm Shao-Hung! ✨
+            </h1>
+            <p class="text-lg text-slate-500 max-w-xl">
+                <span class="lang-zh">我是吳紹宏，一個熱愛機器學習與自動化的開發者。目前剛從清大資工碩士畢業，喜歡把複雜的論文變成好玩的專案！</span>
+                <span class="lang-en">Recent CS Master grad from NTHU. I love turning complex research into efficient automation and AI tools!</span>
+            </p>
+            <div class="flex gap-4 mt-8">
+                <a href="mailto:nemowu1999@gmail.com" class="px-6 py-2 bg-slate-800 text-white rounded-full hover:bg-black transition font-bold">Say Hi! ✉️</a>
+                <div class="flex items-center gap-4 text-2xl text-slate-400">
+                    <a href="https://linkedin.com/in/acewu1014" target="_blank" class="hover:text-blue-500"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/acewu1014" target="_blank" class="hover:text-black"><i class="fab fa-github"></i></a>
                 </div>
-                <a href="你的NOTION連結" target="_blank" class="text-sky-400 font-bold hover:underline">
-                    <span class="lang-en">Explore Notion Notes ↗</span>
-                    <span class="lang-zh">前往查看 Notion 筆記 ↗</span>
-                </a>
             </div>
+        </header>
 
+        <div class="category-header">
+            <div class="icon-box bg-amber-400"><i class="fas fa-graduation-cap"></i></div>
+            <span class="lang-zh">學習歷程</span><span class="lang-en">Education</span>
+        </div>
+        <div class="bento-grid">
             <div class="bento-card">
-                <span class="card-tag">Side Project</span>
-                <h3 class="card-title">Web Automation</h3>
-                <p class="card-desc">
-                    <span class="lang-en">Automated system tracking Japanese e-commerce items with 5-minute polling and Discord alerts.</span>
-                    <span class="lang-zh">開發自動化監測系統，以 5 分鐘一次的頻率追蹤日本電商商品，並即時推播 Discord 通知。</span>
+                <span class="tag bg-amber-100 text-amber-600">2022 - 2024</span>
+                <h3 class="text-xl font-bold mb-1">清華大學 NTHU 🏛️</h3>
+                <p class="text-slate-500 text-sm">
+                    <span class="lang-zh">資工碩士 • 專注於多模態與 Prompt Learning</span>
+                    <span class="lang-en">M.E. in Computer Science • Multimodal & Prompt Learning</span>
                 </p>
-                <div>
-                    <span class="tech-pill">Python</span>
-                    <span class="tech-pill">Playwright</span>
-                    <span class="tech-pill">Discord API</span>
-                </div>
             </div>
-
             <div class="bento-card">
-                <span class="card-tag">Side Project</span>
-                <h3 class="card-title">Custom Search Engine</h3>
-                <p class="card-desc">
-                    <span class="lang-en">Scraping Google results with a custom re-ranking algorithm for high-relevancy data.</span>
-                    <span class="lang-zh">透過爬取並彙整搜尋結果，並設計自定義重排演算法以提取高相關性數據。</span>
+                <span class="tag bg-amber-100 text-amber-600">2018 - 2022</span>
+                <h3 class="text-xl font-bold mb-1">政治大學 NCCU 🎓</h3>
+                <p class="text-slate-500 text-sm">
+                    <span class="lang-zh">資管學士 • 跨領域資訊應用</span>
+                    <span class="lang-en">B.B.A. in MIS • Interdisciplinary Application</span>
                 </p>
-                <div>
-                    <span class="tech-pill">Python</span>
-                    <span class="tech-pill">BeautifulSoup</span>
+            </div>
+        </div>
+
+        <div class="category-header">
+            <div class="icon-box bg-blue-500"><i class="fas fa-flask"></i></div>
+            <span class="lang-zh">研究實作 @ KKSTREAM</span><span class="lang-en">Research Experience</span>
+        </div>
+        <div class="bento-grid">
+            <div class="bento-card full-width border-l-8 border-blue-500">
+                <h3 class="text-xl font-bold mb-2">MMAsia '24 Research Paper 📝</h3>
+                <p class="text-slate-500 mb-4 text-sm italic">Description-Driven Audiovisual Embedding</p>
+                <p class="text-slate-600 mb-4">
+                    <span class="lang-zh">我在 KKSTREAM 實習期間，成功挑戰了 SOTA 方法！在 9 項 LVU 任務中，有 3 項表現更強勁。主要技術是透過電影描述來強化音訊與視覺的學習。</span>
+                    <span class="lang-en">Surpassed SOTA in 3 out of 9 LVU tasks! My work focused on enhancing representation learning using movie descriptions.</span>
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-md text-xs font-bold">PyTorch</span>
+                    <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-md text-xs font-bold">AWS</span>
                 </div>
             </div>
-
-            <div class="bento-card large">
-                <span class="card-tag">Academic Research @ KKSTREAM</span>
-                <h3 class="card-title">
-                    <span class="lang-en">MMAsia'24: Description-Driven Embedding</span>
-                    <span class="lang-zh">MMAsia'24 發表：描述驅動之視聽嵌入</span>
-                </h3>
-                <p class="card-desc">
-                    <span class="lang-en">Improved performance on nine LVU tasks by modeling temporal correlations between audio and visual features.</span>
-                    <span class="lang-zh">透過對音訊與視覺特徵的時間相關性建模，在 9 項 LVU 任務中取得優異表現，其中 3 項超越現有最佳技術 (SOTA)。</span>
+            <div class="bento-card full-width">
+                <h3 class="text-xl font-bold mb-2">Video Tagging UI 🖥️</h3>
+                <p class="text-slate-600 mb-4">
+                    <span class="lang-zh">開發了一個專屬的 PyQt 介面，讓原本痛苦的多標籤影片標記流程變得超級順暢。</span>
+                    <span class="lang-en">Built a custom PyQt UI that significantly simplified the multi-label video annotation workflow.</span>
                 </p>
-                <div class="flex gap-4">
-                    <span class="tech-pill">Pytorch</span>
-                    <span class="tech-pill">AWS</span>
-                    <span class="tech-pill">Video Understanding</span>
-                </div>
+                <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold">PyQt5</span>
             </div>
+        </div>
 
+        <div class="category-header">
+            <div class="icon-box bg-emerald-500"><i class="fas fa-rocket"></i></div>
+            <span class="lang-zh">好玩的專案</span><span class="lang-en">Side Projects</span>
+        </div>
+        <div class="bento-grid">
             <div class="bento-card">
-                <span class="card-tag">Education</span>
-                <h3 class="card-title">NTHU / NCCU</h3>
-                <ul class="text-sm text-slate-400 space-y-2">
-                    <li>
-                        <span class="lang-en">M.E. in Computer Science (2024)</span>
-                        <span class="lang-zh">清華大學 資工碩士 (2024)</span>
-                    </li>
-                    <li>
-                        <span class="lang-en">B.B.A. in MIS (2022)</span>
-                        <span class="lang-zh">政治大學 資管學士 (2022)</span>
-                    </li>
+                <div class="text-3xl mb-4">🇯🇵</div>
+                <h3 class="text-xl font-bold mb-2">Market Watcher</h3>
+                <p class="text-slate-600 text-sm mb-4">
+                    <span class="lang-zh">專門監測日本網拍的機器人，每 5 分鐘掃描一次，有新貨就會在 Discord 叫我！</span>
+                    <span class="lang-en">A bot that monitors Japanese auctions every 5 mins. Real-time alerts via Discord.</span>
+                </p>
+                <div class="flex gap-2">
+                    <span class="text-xs font-bold text-emerald-600">Playwright</span>
+                </div>
+            </div>
+            <div class="bento-card">
+                <div class="text-3xl mb-4">📚</div>
+                <h3 class="text-xl font-bold mb-2">LLM Deep Dive</h3>
+                <p class="text-slate-600 text-sm mb-4">
+                    <span class="lang-zh">我把對 Mamba、KV-Caching 的硬核研究都寫成筆記了，這是我最強的知識庫。</span>
+                    <span class="lang-en">My personal knowledge base on LLM internals, Mamba, and optimization strategies.</span>
+                </p>
+                <a href="你的NOTION連結" target="_blank" class="text-emerald-500 font-bold text-xs hover:underline">Read on Notion ↗</a>
+            </div>
+        </div>
+
+        <div class="category-header">
+            <div class="icon-box bg-purple-500"><i class="fas fa-star"></i></div>
+            <span class="lang-zh">硬實力與榮譽</span><span class="lang-en">Skills & Awards</span>
+        </div>
+        <div class="bento-grid">
+            <div class="bento-card">
+                <h3 class="text-lg font-bold mb-4">Technical Stack 💻</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-purple-50 text-purple-600 rounded-lg text-xs font-bold">Python</span>
+                    <span class="px-3 py-1 bg-purple-50 text-purple-600 rounded-lg text-xs font-bold">C++ / NachOS</span>
+                    <span class="px-3 py-1 bg-purple-50 text-purple-600 rounded-lg text-xs font-bold">OpenCL</span>
+                    <span class="px-3 py-1 bg-purple-50 text-purple-600 rounded-lg text-xs font-bold">Unity3D</span>
+                </div>
+            </div>
+            <div class="bento-card">
+                <h3 class="text-lg font-bold mb-4">Awards 🥇</h3>
+                <ul class="text-sm text-slate-500 space-y-2">
+                    <li><i class="fas fa-trophy text-amber-500 mr-2"></i> 創新競賽 第一名 (2021)</li>
+                    <li><i class="fas fa-lightbulb text-amber-500 mr-2"></i> 國科會 MOST 研究計畫</li>
                 </ul>
             </div>
-
-            <div class="bento-card">
-                <span class="card-tag">Core Skills</span>
-                <h3 class="card-title">System & Dev</h3>
-                <div class="flex flex-wrap">
-                    <span class="tech-pill">C++</span>
-                    <span class="tech-pill">Python</span>
-                    <span class="tech-pill">NachOS</span>
-                    <span class="tech-pill">OpenCL</span>
-                    <span class="tech-pill">Unity3D</span>
-                </div>
-            </div>
-
         </div>
     </div>
 
-    <footer class="text-center py-10 text-slate-500 text-xs">
-        © 2026 SHAO-HUNG, WU. Designed in Apple Bento Style.
+    <footer class="text-center py-12 text-slate-400 text-sm">
+        Made with ❤️ and a lot of ☕ by Shao-Hung.
     </footer>
 
     <script>
